@@ -8,12 +8,12 @@ function initialize() {
     zoom: 2,
     center: {lat: 0, lng: 0}
   });
-console.log("2");
+console.log("22");
   google.maps.event.addListener(map, 'click', function(event) {
       var marker = new google.maps.Marker({
             id: guid(),
             dbid: dbid.value,
-            position: event.latLng.lat(),
+            position: event.latLng,
             map: map,
             draggable: true,
             title: currtitle,
@@ -89,7 +89,7 @@ function genExport() {
             Member_GUID: markers[i].guid,
             Longitude: markers[i].position.F
         }
-console.log(markers[i].position.F);
+console.log(markers[i].position.lat());
         inst.MemberRecords.push(member);
     }
 
