@@ -8,7 +8,7 @@ function initialize() {
     zoom: 2,
     center: {lat: 0, lng: 0}
   });
-console.log("22");
+console.log("222");
   google.maps.event.addListener(map, 'click', function(event) {
       var marker = new google.maps.Marker({
             id: guid(),
@@ -82,12 +82,12 @@ function genExport() {
             Orientation: 0.0,
             LoadoutID: 0,
             Member_DBID: Number(markers[i].dbid),
-            Latitude: markers[i].position,
+            Latitude: markers[i].position.lat(),
             MemberName: markers[i].title,
             ParentGroupName: parent,
             MemberType: "Command_Core.Facility",
             Member_GUID: markers[i].guid,
-            Longitude: markers[i].position.F
+            Longitude: markers[i].position.lng()
         }
 console.log(markers[i].position.lat());
         inst.MemberRecords.push(member);
