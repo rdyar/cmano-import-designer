@@ -8,18 +8,18 @@ function initialize() {
     zoom: 2,
     center: {lat: 0, lng: 0}
   });
-console.log("12");
+console.log("123");
   google.maps.event.addListener(map, 'click', function(event) {
       var marker = new google.maps.Marker({
             id: guid(),
             dbid: dbid.value,
-            position: event.latLng(),
+            position: event.latLng,
             map: map,
             draggable: true,
             title: currtitle,
             type: currtitle
       });
-console.dir(marker)
+console.dir(event.latLng)
       m = markers.push(marker) - 1;
 
       var contentString = '<div id="content">' +
