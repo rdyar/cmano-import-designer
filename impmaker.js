@@ -89,10 +89,10 @@ function genExport() {
             Member_GUID: markers[i].guid,
             Longitude: markers[i].position.F
         }
-
+console.log(markers[i].position.F);
         inst.MemberRecords.push(member);
     }
-
+  console.log(
     return(JSON.stringify(inst, null, 4));
 }
 
