@@ -8,12 +8,12 @@ function initialize() {
     zoom: 2,
     center: {lat: 0, lng: 0}
   });
-console.log("1");
+console.log("12");
   google.maps.event.addListener(map, 'click', function(event) {
       var marker = new google.maps.Marker({
             id: guid(),
             dbid: dbid.value,
-            position: event.getPosition().lat(),
+            position: event.latLng(),
             map: map,
             draggable: true,
             title: currtitle,
