@@ -13,7 +13,7 @@ function initialize() {
       var marker = new google.maps.Marker({
             id: guid(),
             dbid: dbid.value,
-            position: event.latLng,
+            position: getPosition().lat(),
             map: map,
             draggable: true,
             title: currtitle,
