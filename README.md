@@ -1,6 +1,6 @@
 # CMANO stuff
 
-
+```
 clouds = ScenEdit_GetKeyValue("Clouds")
 clouds= tonumber(clouds)
 print(clouds) 
@@ -14,3 +14,4 @@ else
  clouds = .5;
 ScenEdit_SetKeyValue("Clouds", tostring(clouds));
 end
+```
