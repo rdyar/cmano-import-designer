@@ -92,7 +92,7 @@ function genExport() {
 console.log(markers[i].position.F);
         inst.MemberRecords.push(member);
     }
-  console.log(
+
     return(JSON.stringify(inst, null, 4));
 }
 
