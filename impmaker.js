@@ -19,7 +19,7 @@ function initialize() {
             title: currtitle,
             type: currtitle
       });
-
+console.dir(marker)
       m = markers.push(marker) - 1;
 
       var contentString = '<div id="content">' +
