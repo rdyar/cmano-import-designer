@@ -8,8 +8,11 @@ function initialize() {
     zoom: 2,
     center: {lat: 0, lng: 0}
   });
-console.log("9");
+console.log("10");
    google.maps.event.addListener(map, 'click', function(event) {
+     if (dbid.value == "")
+     {return
+     }
       var marker = new google.maps.Marker({
             id: guid(),
             dbid: dbid.value,
