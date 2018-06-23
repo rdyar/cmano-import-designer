@@ -78,16 +78,20 @@ function genExport() {
 
     for (var i in markers) {
         var member = {
-            HostedAircraftRecords: [],
-            Orientation: 0.0,
-            LoadoutID: 0,
             Member_DBID: Number(markers[i].dbid),
-            Latitude: markers[i].position.lat(),
+            Member_GUID: markers[i].id,
+            MemberType: "Command_Core.Facility",
             MemberName: markers[i].title,
             ParentGroupName: parent,
-            MemberType: "Command_Core.Facility",
-            Member_GUID: markers[i].guid,
-            Longitude: markers[i].position.lng()
+            Longitude: markers[i].position.lng(),
+            Latitude: markers[i].position.lat(),
+            Altitude: 0.0,
+            LoadoutID: 0,
+            Orientation: 0.0,
+            HostedAircraftRecords: [],
+            EmbarkedBoatRecords: [],
+            MagazineRecords: [],
+            Member_SBR: null
         }
 console.log(markers[i].position.lat());
         inst.MemberRecords.push(member);
