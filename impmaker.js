@@ -8,7 +8,7 @@ function initialize() {
     zoom: 2,
     center: {lat: 0, lng: 0}
   });
-console.log("8");
+console.log("9");
    google.maps.event.addListener(map, 'click', function(event) {
       var marker = new google.maps.Marker({
             id: guid(),
@@ -16,8 +16,8 @@ console.log("8");
             position: event.latLng,
             map: map,
             draggable: true,
-            title: dbid.text,
-            type: dbid.label
+            title: currtitle,
+            type: currtitle
       });
 console.log(currtitle);
      console.dir(marker);
