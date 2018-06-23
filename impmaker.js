@@ -8,7 +8,7 @@ function initialize() {
     zoom: 2,
     center: {lat: 0, lng: 0}
   });
-console.log("222");
+console.log("3");
   google.maps.event.addListener(map, 'click', function(event) {
       var marker = new google.maps.Marker({
             id: guid(),
@@ -93,7 +93,7 @@ function genExport() {
             MagazineRecords: [],
             Member_SBR: null
         }
-console.log(markers[i].position.lat());
+console.table(markers[i]);
         inst.MemberRecords.push(member);
     }
 
