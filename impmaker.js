@@ -8,7 +8,7 @@ function initialize() {
     zoom: 2,
     center: {lat: 0, lng: 0}
   });
-console.log("7");
+console.log("8");
    google.maps.event.addListener(map, 'click', function(event) {
       var marker = new google.maps.Marker({
             id: guid(),
@@ -19,7 +19,8 @@ console.log("7");
             title: dbid.text,
             type: dbid.label
       });
-console.dir(dbid)
+console.log(currtitle);
+     console.dir(marker);
       m = markers.push(marker) - 1;
 
       var contentString = '<div id="content">' +
