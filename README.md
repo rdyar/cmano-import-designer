@@ -91,8 +91,40 @@ end
 
 print(ScenEdit_GetWeather());
 
+```
 
+Fish Generator - set to merchant here
 
+```
+math.randomseed(os.time())
 
+merch_num = math.random(5,10) --change 8 or 16 to your specified minimum and maximum number of merchants
 
+for i = 1,merch_num do
+redo_count = 0
+::redo::
+local lat_var = math.random(1,(10^13))
+local lon_var = math.random(1,(10^13))
+v_lat = math.random(20,28) + (lat_var/(10^13)) --change the first set (south is negative) to your specified minimum and maximum latitude values; it's important that the first number is smaller than the second.
+v_lon = math.random(-95,-63) + (lon_var/(10^13)) --change first set (west is negative!) to your specified minimum and maximum longitude values; it's important that the first number is smaller than the second.
+elevation = World_GetElevation({latitude=v_lat, longitude=v_lon})
+if elevation > -10 then --Checks to see if the water is deep enough, adjust as you please
+redo_count = redo_count + 1
+print("no")
+if redo_count >50 then
+print (redo_count .. 'ships were not able to find a suitable spot for placement. Re-check latitude and longitude settings')
+break --this cuts the loop if there are no suitable positions found after 50 tries, prevents infinite loop/game freeze
+else
+goto redo --retries the placement if the water is too shallow
+end
+end
+DBIDTABLE = { 775, 2027, 2029, 2028, 2030, 774, 2026, 2031, 2775, 2023, 773, 2774, 1001, 1374, 2773, 2776, 1006, 222, 1599, 2034, 1002, 1317, 144, 339, 275, 145, 2022, 259 } --list of DBIDs
+DBID = DBIDTABLE[math.random( 1, #DBIDTABLE)]
+local new_merch = ScenEdit_AddUnit({side='Merchant', type='Ship',name='Merchant #'..i, dbid=DBID,latitude=v_lat,longitude=v_lon})
+local fuel = new_merch.fuel
+fuel[3001].current = fuel[3001].max*math.random(600, 800)/1000
+new_merch.fuel = fuel
+--ScenEdit_AssignUnitToMission( new_merch.name, 'VLADIVOSTOK')
+print (new_merch.name..' with dbid '..DBID..' was created in water with a depth of '..elevation..'m')
+end
 ```
