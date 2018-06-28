@@ -98,7 +98,7 @@ Fish Generator - set to merchant here
 ```
 math.randomseed(os.time())
 
-merch_num = math.random(5,10) --change 8 or 16 to your specified minimum and maximum number of merchants
+merch_num = math.random(5,10) --change 5 or 10 to your specified minimum and maximum number of merchants
 
 for i = 1,merch_num do
 redo_count = 0
